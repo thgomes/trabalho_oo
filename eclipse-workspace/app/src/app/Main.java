@@ -153,13 +153,23 @@ public class Main {
         return qntAlunos;
     }
 
+    public static void calcularIgualitariamente(){
+        double valorTotal, valorPagamento;
+        int qntAlunos;
 
+        valorTotal = somarDespesas();
+        qntAlunos = contarAlunos();
 
+        valorPagamento = valorTotal / qntAlunos;
+
+        System.out.println("\nO valor a ser pago por cada aluno: " + valorPagamento);
+    }
+
+    public static void calcularProporcional(){
+        // A ser implementado
+    }
+		
 }
-
-	
-	
-
 	
 
 
