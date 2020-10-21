@@ -1,32 +1,16 @@
 package despesas;
 
-public class Subcategoria extends Categoria{
-	
-	
+public class Subcategoria {
+    private String descricao;
 
-	@Override
-	public void setDescricao(String descricao) {
-		// TODO Auto-generated method stub
-		super.setDescricao(descricao);
-	}
-	@Override
-	public String getDescricao() {
-		// TODO Auto-generated method stub
-		return super.getDescricao();
-	}
-	@Override
-	public void setValor(float valor) {
-		// TODO Auto-generated method stub
-		super.setValor(valor);
-	}
-	@Override
-	public float getValor() {
-		// TODO Auto-generated method stub
-		return super.getValor();
-	}
-	public Subcategoria() {
-		// TODO Auto-generated constructor stub
-	}
+    public Subcategoria(String descricao) {
+        this.setDescricao(descricao);
+    }
 
+    public String getDescricao() {
+		return descricao;
+    }
+    public void setDescricao(String descricao) {
+		this.descricao = descricao;
+    }    
 }
-    
