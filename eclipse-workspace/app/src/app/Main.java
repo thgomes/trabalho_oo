@@ -124,6 +124,35 @@ public class Main {
         return soma; 
     }
 
+		public static int contarAlunos() {
+
+        int qntAlunos = 0;
+
+        try {
+            FileReader fr = new FileReader("alunos.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String linha = br.readLine();
+
+            while (linha != null) {
+                qntAlunos += 1;
+                linha = br.readLine();
+                
+                if (linha == null) {
+                    break;
+                }   
+            }
+
+            br.close();
+            fr.close();
+
+        } catch(IOException err) {
+            System.out.println("Erro na leitura " + err.getMessage());
+        }
+
+        return qntAlunos;
+    }
+
 
 
 }
