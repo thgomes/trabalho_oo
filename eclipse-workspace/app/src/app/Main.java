@@ -92,6 +92,39 @@ public class Main {
     }
 
 
+		public static double somarDespesas() {
+
+        Double soma;
+        soma = 0.0;
+
+        try {
+            FileReader fr = new FileReader("despesas_10_20.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String linha = br.readLine();
+            String despesas[] = new String[4];
+
+            while (linha != null) {
+                despesas = linha.split(";");
+                soma += Double.parseDouble(despesas[3]);
+                linha = br.readLine();
+                
+                if (linha == null) {
+                    break;
+                }
+            }
+
+            br.close();
+            fr.close();
+
+        } catch(IOException err) {
+            System.out.println("Erro na leitura " + err.getMessage());
+        }
+
+        return soma; 
+    }
+
+
 
 }
 
