@@ -50,6 +50,26 @@ public class Main {
     } 
 
 
+		public static void cadastrarPessoa() {
+        Scanner in = new Scanner(System.in);
+        String nome, email;
+        double rendimento;
+
+        System.out.println("\nNome: ");
+        nome = in.nextLine();
+
+        System.out.println("\nEmail: ");
+        email = in.nextLine();
+
+        System.out.println("\nRendimento: ");
+        rendimento = in.nextDouble();
+        
+        Pessoa novaPessoa = new Pessoa(nome, email, rendimento);
+        
+        novaPessoa.salvar();
+    }
+
+
 
 }
 
