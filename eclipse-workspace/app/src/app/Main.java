@@ -14,7 +14,6 @@ import despesas.Subcategoria;
 public class Main {
 
     public static void main(String[] args) {
-        
         Scanner in = new Scanner(System.in);
         int operacao;
         operacao = 0;
@@ -49,7 +48,6 @@ public class Main {
  
     } 
 
-
 		public static void cadastrarPessoa() {
         Scanner in = new Scanner(System.in);
         String nome, email;
@@ -67,6 +65,30 @@ public class Main {
         Pessoa novaPessoa = new Pessoa(nome, email, rendimento);
         
         novaPessoa.salvar();
+    }
+
+		public static void cadastrarDespesa() {
+        Scanner in = new Scanner(System.in);
+        String descricaoDespesa, descricaoCategoria, descricaoSubcategoria;
+        double valor;
+
+        System.out.println("\nDescrição: ");
+        descricaoDespesa = in.nextLine();
+
+        System.out.println("\nCategoria: ");
+        descricaoCategoria = in.nextLine();
+
+        System.out.println("\nSubcategoria: ");
+        descricaoSubcategoria = in.nextLine();
+
+        System.out.println("\nValor: ");
+        valor = in.nextDouble();
+
+        Subcategoria novaSubcategoria = new Subcategoria(descricaoSubcategoria);
+        Categoria novaCategoria = new Categoria(descricaoCategoria, novaSubcategoria);
+        Despesa novaDespesa = new Despesa(descricaoDespesa, novaCategoria, valor);
+        
+        novaDespesa.salvar();
     }
 
 
