@@ -2,7 +2,6 @@ package app;
 
 import java.util.Scanner;
 
-
 import pessoas.Pessoa;
 
 import despesas.Despesa;
@@ -29,7 +28,7 @@ public class Cadastro {
         novaPessoa.salvar();
     }
 
-		public static void cadastrarDespesa() {
+	public static void cadastrarDespesa() {
         Scanner in = new Scanner(System.in);
         String descricaoDespesa, descricaoCategoria, descricaoSubcategoria;
         double valor;
