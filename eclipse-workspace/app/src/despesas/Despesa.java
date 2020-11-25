@@ -18,18 +18,23 @@ public class Despesa {
 	public String getDescricao() {
 		return this.descricao;
     }
+
     public Categoria getCategoria() {
         return this.categoria;
     }
+
     public Double getValor() {
         return this.valor;
     }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
     public void setValor(double valor) {
         this.valor = valor;
     }
@@ -46,7 +51,6 @@ public class Despesa {
 
         } catch(IOException err) {
             System.out.println("\nErro de cadastro" + err);
-        }
-        
+        } 
     }
 }

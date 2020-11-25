@@ -1,14 +1,12 @@
 package app;
 
 import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) {
         Cadastro cadastro = new Cadastro();
+        Relatorio relatorio = new Relatorio();
         Scanner in = new Scanner(System.in);
         int operacao;
         operacao = 0;
@@ -27,24 +25,25 @@ public class Main {
             operacao = in.nextInt();
 
             if (operacao == 1) {
-                cadastro.cadastrarPessoa();
+                cadastro.cadastraPessoa();
+
 
             } else if (operacao == 2) {
-                cadastro.cadastrarPessoa();
+                cadastro.cadastraDespesa();
+
 
             } else if (operacao == 3) {
-                calcularIgualitariamente();
+                relatorio.calculoIgualitario();
+                
 
             } else if (operacao == 4) {
-                contarAlunos();
+                relatorio.calculoProporcional();
             }
 
         }
  
     } 
-
-
-
+}
 
 
 

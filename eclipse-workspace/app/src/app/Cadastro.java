@@ -9,7 +9,7 @@ import despesas.Categoria;
 import despesas.Subcategoria;
 
 public class Cadastro {
-    public static void cadastrarPessoa() {
+    public static void cadastraPessoa() {
         Scanner in = new Scanner(System.in);
         String nome, email;
         double rendimento;
@@ -28,7 +28,7 @@ public class Cadastro {
         novaPessoa.salvar();
     }
 
-	public static void cadastrarDespesa() {
+	public static void cadastraDespesa() {
         Scanner in = new Scanner(System.in);
         String descricaoDespesa, descricaoCategoria, descricaoSubcategoria;
         double valor;

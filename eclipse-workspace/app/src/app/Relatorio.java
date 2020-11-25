@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Relatorio {
 
-	private static double somarDespesas() {
+	private static double somaDespesas() {
         Double soma;
         soma = 0.0;
 
@@ -37,7 +37,7 @@ public class Relatorio {
         return soma; 
     }
     
-    private static int contarAlunos() {
+    private static int contaAlunos() {
         int qntAlunos = 0;
 
         try {
@@ -65,19 +65,19 @@ public class Relatorio {
         return qntAlunos;
     }
     
-    public static void calcularIgualitariamente(){
+    public static void calculoIgualitario(){
         double valorTotal, valorPagamento;
         int qntAlunos;
 
-        valorTotal = somarDespesas();
-        qntAlunos = contarAlunos();
+        valorTotal = somaDespesas();
+        qntAlunos = contaAlunos();
 
         valorPagamento = valorTotal / qntAlunos;
 
         System.out.println("\nO valor a ser pago por cada aluno: " + valorPagamento);
     }
 
-    public static void calcularProporcional(){
+    public static void calculoProporcional(){
         // A ser implementado
             
     }

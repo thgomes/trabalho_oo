@@ -6,30 +6,36 @@ import java.io.IOException;
 
 public class Pessoa {
     
-    protected double rendimento;
-    protected  String email;
-    protected  String  nome;
+    private double rendimento;
+    private String email;
+    private String nome;
 
     public Pessoa(String nome,String email, double rendimento ) {
         this.setEmail(email);
         this.setNome(nome);
         this.setRendimento(rendimento);
-    }   
+    }
+
     public double getRendimento() {
         return rendimento;
     }
+
     public void setRendimento(double rendimento) {
         this.rendimento = rendimento;
     }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
+
     public String getNome() {
         return nome;
     }
+    
     public void setNome(String nome) {
         this.nome = nome;
     }

@@ -13,12 +13,15 @@ public class Categoria {
 	public String getDescricao() {
 		return descricao;
     }
+
     public Subcategoria getSubcategoria() {
         return subcategoria;
     }
+
     public void setDescricao(String descricao) {
 		this.descricao = descricao;
     }
+    
     public void setSubcategoria(Subcategoria subcategoria) {
         this.subcategoria = subcategoria;
     }
