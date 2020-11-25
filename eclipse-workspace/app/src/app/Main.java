@@ -5,15 +5,12 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.io.IOException;
 
-import pessoas.Pessoa;
 
-import despesas.Despesa;
-import despesas.Categoria;
-import despesas.Subcategoria;
 
 public class Main {
 
     public static void main(String[] args) {
+        Cadastro cadastro = new Cadastro();
         Scanner in = new Scanner(System.in);
         int operacao;
         operacao = 0;
@@ -32,10 +29,10 @@ public class Main {
             operacao = in.nextInt();
 
             if (operacao == 1) {
-                cadastrarPessoa();
+                cadastro.cadastrarPessoa();
 
             } else if (operacao == 2) {
-                cadastrarDespesa();
+                cadastro.cadastrarPessoa();
 
             } else if (operacao == 3) {
                 calcularIgualitariamente();
@@ -48,48 +45,7 @@ public class Main {
  
     } 
 
-		public static void cadastrarPessoa() {
-        Scanner in = new Scanner(System.in);
-        String nome, email;
-        double rendimento;
 
-        System.out.println("\nNome: ");
-        nome = in.nextLine();
-
-        System.out.println("\nEmail: ");
-        email = in.nextLine();
-
-        System.out.println("\nRendimento: ");
-        rendimento = in.nextDouble();
-        
-        Pessoa novaPessoa = new Pessoa(nome, email, rendimento);
-        
-        novaPessoa.salvar();
-    }
-
-		public static void cadastrarDespesa() {
-        Scanner in = new Scanner(System.in);
-        String descricaoDespesa, descricaoCategoria, descricaoSubcategoria;
-        double valor;
-
-        System.out.println("\nDescrição: ");
-        descricaoDespesa = in.nextLine();
-
-        System.out.println("\nCategoria: ");
-        descricaoCategoria = in.nextLine();
-
-        System.out.println("\nSubcategoria: ");
-        descricaoSubcategoria = in.nextLine();
-
-        System.out.println("\nValor: ");
-        valor = in.nextDouble();
-
-        Subcategoria novaSubcategoria = new Subcategoria(descricaoSubcategoria);
-        Categoria novaCategoria = new Categoria(descricaoCategoria, novaSubcategoria);
-        Despesa novaDespesa = new Despesa(descricaoDespesa, novaCategoria, valor);
-        
-        novaDespesa.salvar();
-    }
 
 
 		public static double somarDespesas() {
