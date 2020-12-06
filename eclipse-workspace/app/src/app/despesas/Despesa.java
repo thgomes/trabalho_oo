@@ -14,7 +14,6 @@ public class Despesa {
         this.setCategoria(categoria);
         this.setValor(valor);
     }
-
 	public String getDescricao() {
 		return this.descricao;
     }
