@@ -1,4 +1,4 @@
-package pessoas;
+package app.pessoas;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;

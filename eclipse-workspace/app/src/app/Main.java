@@ -5,11 +5,11 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.io.IOException;
 
-import pessoas.Pessoa;
+import app.pessoas.Pessoa;
 
-import despesas.Despesa;
-import despesas.Categoria;
-import despesas.Subcategoria;
+import app.despesas.Despesa;
+import app.despesas.Categoria;
+import app.despesas.Subcategoria;
 
 public class Main {
 
@@ -90,87 +90,6 @@ public class Main {
         
         novaDespesa.salvar();
     }
-
-
-		public static double somarDespesas() {
-
-        Double soma;
-        soma = 0.0;
-
-        try {
-            FileReader fr = new FileReader("despesas_10_20.txt");
-            BufferedReader br = new BufferedReader(fr);
-
-            String linha = br.readLine();
-            String despesas[] = new String[4];
-
-            while (linha != null) {
-                despesas = linha.split(";");
-                soma += Double.parseDouble(despesas[3]);
-                linha = br.readLine();
-                
-                if (linha == null) {
-                    break;
-                }
-            }
-
-            br.close();
-            fr.close();
-
-        } catch(IOException err) {
-            System.out.println("Erro na leitura " + err.getMessage());
-        }
-
-        return soma; 
-    }
-
-		public static int contarAlunos() {
-
-        int qntAlunos = 0;
-
-        try {
-            FileReader fr = new FileReader("alunos.txt");
-            BufferedReader br = new BufferedReader(fr);
-
-            String linha = br.readLine();
-
-            while (linha != null) {
-                qntAlunos += 1;
-                linha = br.readLine();
-                
-                if (linha == null) {
-                    break;
-                }   
-            }
-
-            br.close();
-            fr.close();
-
-        } catch(IOException err) {
-            System.out.println("Erro na leitura " + err.getMessage());
-        }
-
-        return qntAlunos;
-    }
-
-    public static void calcularIgualitariamente(){
-        double valorTotal, valorPagamento;
-        int qntAlunos;
-
-        valorTotal = somarDespesas();
-        qntAlunos = contarAlunos();
-
-        valorPagamento = valorTotal / qntAlunos;
-
-        System.out.println("\nO valor a ser pago por cada aluno: " + valorPagamento);
-    }
-
-    public static void calcularProporcional(){
-        // A ser implementado
-    }
-		
 }
-	
-
 
 

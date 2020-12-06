@@ -1,4 +1,4 @@
-package despesas;
+package app.despesas;
 
 public class Categoria {
 	

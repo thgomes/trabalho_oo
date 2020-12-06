@@ -1,4 +1,4 @@
-package despesas;
+package app.despesas;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
