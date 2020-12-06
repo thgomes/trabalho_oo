@@ -1,4 +1,4 @@
-package despesas;
+package app.despesas;
 
 public class Subcategoria {
     private String descricao;
@@ -8,9 +8,9 @@ public class Subcategoria {
     }
 
     public String getDescricao() {
-		return descricao;
+		    return descricao;
     }
     public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		    this.descricao = descricao;
     }    
 }

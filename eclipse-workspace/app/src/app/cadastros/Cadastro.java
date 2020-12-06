@@ -25,27 +25,29 @@ public class Cadastro {
 	
     public void cadastraPessoa() throws RendimentoInvalidoException, DadosPessoaisIncompletosException  {
 		
-		 nome=  JOptionPane.showInputDialog("\nNome: ");
-		// exceção para nome nao informado
-		 if(nome.equals("")) {
+		nome=  JOptionPane.showInputDialog("\nNome: ");
+		// exceï¿½ï¿½o para nome nao informado
+		if(nome.equals("")) {
 			 throw new  DadosPessoaisIncompletosException("dados incompletos\n");
-		 }
+		}
 		
-		 email= JOptionPane.showInputDialog("\nEmail: ");
-		// exceção para email nao informado
-		 if(email.equals("")) {
+		email= JOptionPane.showInputDialog("\nEmail: ");
+		// exceï¿½ï¿½o para email nao informado
+		if(email.equals("")) {
 			 throw new  DadosPessoaisIncompletosException("dados incompletos\n");
-		 }
+		}
 		 
 		String rendimento1= JOptionPane.showInputDialog("\nRendimento: ");
-		// exceção para rendimento nao informado
+		// exceï¿½ï¿½o para rendimento nao informado
 		if(rendimento1.equals("")) {
-			throw new  DadosPessoaisIncompletosException("dados incompletos\n");}		
-		 rendimento=Double.parseDouble(rendimento1);
+			throw new  DadosPessoaisIncompletosException("dados incompletos\n");
+		}		
+		
+		rendimento=Double.parseDouble(rendimento1);
 			 
-		 //para rendimento inválido negativo
+		 //para rendimento invï¿½lido negativo
         if(rendimento<0) {
-        	throw new RendimentoInvalidoException("rendimento inválido\n");
+        	throw new RendimentoInvalidoException("rendimento invï¿½lido\n");
         }
         
         Pessoa novaPessoa = new Pessoa(nome, email, rendimento);
@@ -59,25 +61,25 @@ public class Cadastro {
 
 	public  void cadastraDespesa() throws CategoriaNaoInformadaException, DescricaoNaoInformadaException, ValorNaoInformadoException {
        
-		descricaoDespesa = JOptionPane.showInputDialog("\nDescrição: ");
+		descricaoDespesa = JOptionPane.showInputDialog("\nDescriï¿½ï¿½o: ");
 		
-		// //exceção para despesa sem descrição
+		// //exceï¿½ï¿½o para despesa sem descriï¿½ï¿½o
 		if(descricaoDespesa.equals("")) {
-			throw new DescricaoNaoInformadaException("Descrição de despesa não informada");}
+			throw new DescricaoNaoInformadaException("Descriï¿½ï¿½o de despesa nï¿½o informada");
+		}
 		       
         descricaoCategoria = JOptionPane.showInputDialog("\nCategoria: ");
         
-      //exceção para despesa sem categoria
-      	if(descricaoCategoria.equals("")) {
-                            	
-             throw new CategoriaNaoInformadaException("Categoria não informada");}
-      	
+      //exceï¿½ï¿½o para despesa sem categoria
+      	if(descricaoCategoria.equals("")) {                	
+			throw new CategoriaNaoInformadaException("Categoria nï¿½o informada");
+		}
       
         descricaoSubcategoria = JOptionPane.showInputDialog("\nSubcategoria: ");
         String valor1=JOptionPane.showInputDialog ("\nValor: ");
-      //exceção para despesa sem valor informado
+      //exceï¿½ï¿½o para despesa sem valor informado
         if(valor1.equals("")) {           	
-       	throw new ValorNaoInformadoException("Valor não informado");}
+       	throw new ValorNaoInformadoException("Valor nï¿½o informado");}
              
         valor = Double.parseDouble(valor1);
          
@@ -104,17 +106,16 @@ public class Cadastro {
 	public void imprimirCadastro() {
    	 for(int i=0;i<despesas.size();i++) {
    		
-   		JOptionPane.showMessageDialog(null,"Você cadastrou uma despesa com a descrição :"+despesas.get(i).getDescricao()+
+   		JOptionPane.showMessageDialog(null,"Vocï¿½ cadastrou uma despesa com a descriï¿½ï¿½o :"+despesas.get(i).getDescricao()+
    			" com a categoria: "+categorias.get(i).getDescricao()+" e subcategoria: "+subcategorias.get(i).getDescricao() +
    			" com o valor de "+despesas.get(i).getValor());
    	 	}
     }
 	
 	public void imprimirPessoa() {
-		
 		for(int i=0;i<pessoas.size();i++) {
-			JOptionPane.showMessageDialog(null,"Você cadastrou o morador(a): "+pessoas.get(i).getNome()+" com o email: "+
+			JOptionPane.showMessageDialog(null,"Vocï¿½ cadastrou o morador(a): "+pessoas.get(i).getNome()+" com o email: "+
 			pessoas.get(i).getEmail()+" e rendimento de: "+ pessoas.get(i).getRendimento() );
-		 }
+		}
 	}
 }

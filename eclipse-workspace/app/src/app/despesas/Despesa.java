@@ -1,4 +1,4 @@
-package despesas;
+package app.despesas;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -14,7 +14,6 @@ public class Despesa {
         this.setCategoria(categoria);
         this.setValor(valor);
     }
-
 	public String getDescricao() {
 		return this.descricao;
     }
