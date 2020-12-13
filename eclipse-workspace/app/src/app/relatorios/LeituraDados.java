@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.File;
+import javax.swing.JOptionPane;
 
 import app.pessoas.Pessoa;
 import app.despesas.*;
 
-
 public class LeituraDados {
+
     private ArrayList<Pessoa> pessoas= new ArrayList<Pessoa>();
 
     private ArrayList<Despesa> despesas= new ArrayList<Despesa>();
@@ -50,7 +52,7 @@ public class LeituraDados {
 
         }
     }
-    
+
     public void setDespesas() {
         String descricaoDespesa;
         String descricaoSubcategoria;
@@ -91,7 +93,7 @@ public class LeituraDados {
         }
         
     }
-    
+
     public ArrayList<Pessoa> getPessoas() {
         return pessoas;
     }
@@ -99,5 +101,15 @@ public class LeituraDados {
     public ArrayList<Despesa> getDespesas() {
         return despesas;
     }
-}
 
+    public void apagarDados() {
+        File filePessoas = new File( "alunos.txt" ); 
+        filePessoas.delete();
+
+        File fileDespesas = new File( "despesas_12_20.txt" ); 
+        fileDespesas.delete();
+
+        JOptionPane.showMessageDialog(null, "Dados apagados com sucesso!");
+
+    }
+}
