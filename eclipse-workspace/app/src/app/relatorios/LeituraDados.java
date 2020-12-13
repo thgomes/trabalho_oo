@@ -91,4 +91,13 @@ public class LeituraDados {
         }
         
     }
+    
+    public ArrayList<Pessoa> getPessoas() {
+        return pessoas;
+    }
+
+    public ArrayList<Despesa> getDespesas() {
+        return despesas;
+    }
 }
+
