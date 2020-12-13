@@ -51,4 +51,44 @@ public class LeituraDados {
         }
     }
     
+    public void setDespesas() {
+        String descricaoDespesa;
+        String descricaoSubcategoria;
+        String descricaoCategoria;
+        double valor;
+
+        String linha;
+        String dados[] = new String[4];
+
+        try {
+            FileReader fr = new FileReader("despesas_12_20.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            linha = br.readLine();
+            
+            while (linha != null) {
+                dados = linha.split(";");
+                
+                descricaoDespesa = dados[0];
+                descricaoCategoria = dados[1];
+                descricaoSubcategoria = dados[2];
+                valor = Double.parseDouble(dados[3]);
+                
+                Subcategoria novaSubcategoria = new Subcategoria(descricaoSubcategoria);
+                Categoria novaCategoria = new Categoria(descricaoCategoria,novaSubcategoria );
+                Despesa novaDespesa= new Despesa(descricaoDespesa,novaCategoria, valor);
+                
+                despesas.add(novaDespesa);
+
+                linha = br.readLine();
+            }
+
+            br.close();
+            fr.close();
+
+        } catch(IOException err) {
+            System.out.println("Erro na leitura " + err.getMessage());
+        }
+        
+    }
 }
